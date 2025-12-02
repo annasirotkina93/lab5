@@ -25,7 +25,7 @@ print("Ссылки в домене .com:", links_com)
 with open("task3.txt", "r", encoding="utf-8") as file:
     data = file.read()
 
-id = re.findall(r"\b\d+\b", data)
+id = re.findall(r"(?<!\d)\b\d{1,3}\b(?!-\d)", data)
 name = re.findall(r"\b[A-Z][a-z]+(?:\s[A-Z][a-z]+)*\b", data)
 email = re.findall(r"[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,}", data)
 date = re.findall(r"\b\d{4}-\d{2}-\d{2}\b", data)
